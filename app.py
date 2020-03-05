@@ -5,13 +5,13 @@ app = Flask(__name__)
 with urllib.request.urlopen("http://apis.is/petrol") as url:
     data = json.loads(url.read().decode())
 listibensin = []
-cheap95 = data["results"][0]["bensin95"]
-cheapD = data["results"][0]["diesel"]
+cheap95 = {"bensin95":data["results"][0]["bensin95"],"stadur":data["results"][0]["name"],"fyrirtaeki":data["results"][0]["company"]}
+cheapD = {"diesel":data["results"][0]["diesel"],"stadur":data["results"][0]["name"],"fyrirtaeki":data["results"][0]["company"]}
 for x in data["results"]:
-    if x["bensin95"] < cheap95:
-        cheap95 = x["bensin95"]
-    if x["diesel"] < cheapD:
-        cheapD = x["diesel"]
+    if x["bensin95"] < cheap95["bensin95"]:
+        cheap95 = {"bensin95":x["bensin95"],"stadur":x["name"],"fyrirtaeki":x["company"]}
+    if x["diesel"] < cheapD["diesel"]:
+        cheapD = {"diesel":x["diesel"],"stadur":x["name"],"fyrirtaeki":x["company"]}
     listibensin.append(x)
 date = data["timestampPriceCheck"]
 myndir = {"Atlantsolía":"/static/atlantsolia.png","Costco Iceland":"/static/costco.png","Dælan":"/static/daelan.png","N1":"/static/n1.png","ÓB":"/static/ob.png","Olís":"/static/olis.png","Orkan":"/static/orkan.png"}

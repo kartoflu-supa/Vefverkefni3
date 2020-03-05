@@ -39,8 +39,10 @@ body
 .table
 {
     background-color: rgb(54, 53, 53);
+    margin: 0 auto;
 }
 .tablecont
 {
     background-color: rgb(240, 202, 154);
+    padding: 10px;
 }
