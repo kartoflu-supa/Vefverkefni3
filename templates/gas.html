@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/base.css">
+    <title>Document</title>
+</head>
+<body>
+    {%include "navbar.html" %}
+    <table class="table">
+        <tr>
+            <th class="tablecont">
+                <h4>Staðsetning</h4>
+            </th>
+            <th class="tablecont">
+                <h4>Diesel verð</h4>
+            </th>
+            <th class="tablecont">
+                <h4>Oktan verð</h4>
+            </th>
+            <th class="tablecont">
+                <h4>Google maps Staðsetning</h4>
+            </th>
+        </tr>
+            {%for x in listi%}
+                {%if x['company'] == nafn%}
+                    <tr>
+                        <td class="tablecont">
+                            {{x['name']}}
+                        </td>
+                        <td class="tablecont">
+                            {{x['diesel']}}
+                        </td>
+                        <td class="tablecont">
+                            {{x['bensin95']}}
+                        </td>
+                        <td class="tablecont">
+                            <a href="https://www.google.com/maps/@{{x['geo']['lat']}},{{x['geo']['lon']}},15z">Maps</a>
+                        </td>
+                    </tr>
+                {%endif%}
+            {%endfor%}
+    </table>
+</body>
+</html>

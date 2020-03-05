@@ -1,0 +1,46 @@
+body
+{
+    background-color: rgb(141, 214, 207);
+}
+.navbar
+{
+    background-color: rgb(54, 53, 53);
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.navbut
+{
+    text-align: center;
+    background-color: rgb(240, 202, 154);
+    padding: 10px;
+    margin: 10px;
+}
+.box
+{
+    background-color: rgb(216, 216, 106);
+    max-width: 500px;
+    margin: 0 auto;
+}
+.img
+{
+    width: 100px;
+    height: 100px;
+}
+.colom
+{
+    background-color: teal;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 800px;
+    margin: 0 auto; 
+}
+.table
+{
+    background-color: rgb(54, 53, 53);
+}
+.tablecont
+{
+    background-color: rgb(240, 202, 154);
+}
